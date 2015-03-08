@@ -1,37 +1,38 @@
-# SentryTurret
-
-This project licensed under GNU GENERAL PUBLIC LICENSE
-https://www.gnu.org/licenses/gpl.txt
-
-Attach the Raspberry pi servo hat to the Raspberry pi, x-axis servo on 0 and y-axis servo on 3 
+Attach the Raspberry pi servo hat to the Raspberry pi, x-axis servo on 0 and y-axis servo on 3
 
 connect the relay board to gnd and vin and gpio 24
 
-![Raspberry pi and Relay](http://i.imgur.com/LZkYvNJ.jpg "Connected") 
+connect piezo buzzers to gpio 5 and 18
 
-A sentry turret style robot which will detect motion, then track and fire at the object. The robot's "turret" is rotated by two servos (X/pan axis and Y/tilt axis). The "eye"(webcam) and "gun" of the robot should be mounted on the turret. 
+Manual Control for Sentry Turret
 
-![Raspberry pi Display](http://i.imgur.com/XBFRPyV.jpg "Display") 
+' ' = reset
 
-When activated, the robot will initialize an average image and wait to detect motion above a threshold size. It will target the mean HSV of a moving object and begin blob detection to center the camera's view (using turret servos) on the object. When the object is centered, it will fire by using a relay board.
+w = move up
 
-See main.py for further comments.
+a = move left
 
-To run with display: $python main.py 1
+s = move down
 
-The program starts a thread for the turret which is continually updated with target coordinates by the OpenCV frame processing. A separate thread handles terminal keyboard input:
+d = move right
 
-- q = quit
-- ' ' = reset
-- 1 = start motion detect
-- 2 = sample center for target
-- f/v = +/- threshhold area
-- a,s,d/z,x,c = +/- H,S,V
-- p = toggle armed
-- l/m = +/- target sensitivity
-- f = fire
+f = fire
 
----
+x = trigger buzzers
 
-The working example was built on RaspberryPi2 with Raspian and OpenCV(python) 2.4, using GPIO pins connected to a servo hat from adafruit. https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/overview
-relay board is the fire control system
+b = fire left
+
+n = fire right
+
+
+The following files come from https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code and fall under the below copyright conditions.
+
+* Adafruit_I2C.py
+* Adafruit_PWM_Servo_Driver.py
+
+Copyright (c) 2012-2013 Limor Fried, Kevin Townsend and Mikey Sklar for Adafruit Industries. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. * Neither the name of the nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
