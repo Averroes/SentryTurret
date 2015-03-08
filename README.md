@@ -1,3 +1,4 @@
+![image](http://i.imgur.com/b4JQwYZ.jpg)
 Attach the Raspberry pi servo hat to the Raspberry pi, x-axis servo on 0 and y-axis servo on 3
 
 connect the relay board to gnd and vin and gpio 24
@@ -24,8 +25,8 @@ b = fire left
 
 n = fire right
 
+Add a joystick for added enjoyment use JoyToKey http://joytokey.net/en/
 ![image](https://scontent-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10551111_10102040449359939_1193606793478368655_n.jpg?oh=4afb9d2e38645f1eda55b1fe9584a000&oe=558AADE1)
-![image]()
 
 The following files come from https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code and fall under the below copyright conditions.
 
