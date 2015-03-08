@@ -24,6 +24,8 @@ b = fire left
 
 n = fire right
 
+![image](https://scontent-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10551111_10102040449359939_1193606793478368655_n.jpg?oh=4afb9d2e38645f1eda55b1fe9584a000&oe=558AADE1)
+![image]()
 
 The following files come from https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code and fall under the below copyright conditions.
 
