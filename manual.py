@@ -62,11 +62,27 @@ while True:
 	 tilt(130)
 	 sleep(2)
 	 GPIO.output(18,False) ## Turn off GPIO pin 24
-
+      if KeyboardPoller.key=="x": #BOOM
+         GPIO.setup(12, GPIO.OUT) ## Setup GPIO Pin 18 to OUT
+         GPIO.output(12,True) ## Turn on GPIO pin 18
+         GPIO.setup(29, GPIO.OUT) ## Setup GPIO Pin 5 to OUT
+         GPIO.output(29,True) ## Turn on GPIO pin 5
+         sleep(5)
+         GPIO.output(12,False) ## Turn off GPIO pin 18
+         GPIO.output(29,False) ## Turn off GPIO pin 5
       if KeyboardPoller.key==" ": #reset all
          cam_pan=110
          cam_tilt=90
          print "Reset."
+      if KeyboardPoller.key=="p": #strafe
+         GPIO.setup(18, GPIO.OUT)
+         GPIO.output(18,True)
+         for x in range(45, 135):
+             cam_pan=x
+             pan(cam_pan)
+             sleep(.01)
+         cam_pan=90
+         GPIO.output(18,False)
    KeyboardPoller.WaitKey().thread.start()
    pan(cam_pan)
    tilt(cam_tilt)
